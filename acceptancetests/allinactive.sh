@@ -1,5 +1,5 @@
 #! /bin/bash
 curl -i -X GET \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb21ldGhpbmciLCJwcm92SWQiOjcsIm9yZ0lkIjoxLCJpYXQiOjE2ODkyNDA0MTcsImV4cCI6MTY4OTI0NzYxN30.MaWy2wRo1Y4BL9G0vBKpNF0Z-Ylrrtz3gieohSSSZ-I" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb21ldGhpbmciLCJwcm92SWQiOjcsIm9yZ0lkIjoxLCJpYXQiOjE2ODkyNDkwMjAsImV4cCI6MTY4OTI1NjIyMH0.wFJHGgvQYyQ6zzEyn3uyskYN75y3vK-UusMwFAI6ohg" \
 http://localhost:8080/api/organisations/1/provisioner/7/users/allinactive -w "%{http_code}\n"
