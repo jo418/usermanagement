@@ -5,6 +5,7 @@ implementation with Java. Providers can ask for JWT token from the system.
 With the token users can be created to the system by provider system.
 
 ### Technology choices
+
 This application has been implemented with the following technology:
 - Java 17, although also older Java versions may be feasible
 - Spring as Java backend framework
@@ -22,6 +23,20 @@ The JPA library is javax.persistence.
 To make a production grade, we could use Docker to make an easily deployable and
 invocable image. Maybe later, but at the time being the development resources
 are needed elsewhere.
+- the implementation contains an aimed error object, that is LocalErrorResponse which is not in use.
+The reasoning here is that we want expose minimal amount of information from backend on error cases
+so that a potential intruder can not study the system behaviour by using
+erroneous input and faulty invocations, therefore the http status should be sufficient.
+
+### Vulnerabilities
+
+- We should use https as protocol so that jwt tokens would not be possible to compromise.
+To use openssl and to store private keys differently is beyond the scope of this work.
+- We should not save private keys or secret source into GitHub. As this code is
+in public repository, they are visible for everybody. We should not save them
+even into a private repository, because it may later become public and secrets can
+be read from git history. However, this work is at development state and the secret source shall not 
+be used in production we think that we can now relax with this issue.
 
 ### Acceptance testing
 
