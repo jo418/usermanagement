@@ -18,6 +18,10 @@ The JPA library is javax.persistence.
 - lombok library to implement Java objects more easily
 - junit for verifying JWT token generation and parsing
 - bash to use curl commands to perform acceptance testing
+- backend can be invoked from IDE as the state of this work is development, and not production.
+To make a production grade, we could use Docker to make an easily deployable and
+invocable image. Maybe later, but at the time being the development resources
+are needed elsewhere.
 
 ### Acceptance testing
 
