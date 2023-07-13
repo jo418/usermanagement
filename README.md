@@ -4,8 +4,20 @@ The purpose of this application is to demonstrate an initial user management sys
 implementation with Java. Providers can ask for JWT token from the system.
 With the token users can be created to the system by provider system.
 
-### Documentation
-The requirements of the system are the following:
+### Technology choices
+This application has been implemented with the following technology:
+- Java 17, although also older Java versions may be feasible
+- Spring as Java backend framework
+- IDEA for editing, debugging and invoking the backend service
+- jjwt to implement JTW token generation and validation by parsing tokens
+- H2 as memory database
+- JPA to save and read objects into and from H2. I am just sorry that JDBC was not used, so
+there is no SQL visible. JPA is easier to use with small applications, and because we don't have any need to optimize the code with SQL.
+Code can be optimized for performance ad clarity later, if there never ever is such need.
+The JPA library is javax.persistence.
+- lombok library to implement Java objects more easily
+- junit for verifying JWT token generation and parsing
+- bash to use curl commands to perform acceptance testing
 
 ### Acceptance testing
 
@@ -18,7 +30,11 @@ The curl scripts in an appropriate oder of application are the following:
 - activateone.sh
 - activateall.sh
 
-1) Introduce provisioner to the system
+Start backend service from IDEA.
+
+![Invoke backend](images/StartBackendFromIdea.png)
+
+Introduce provisioner to the system
 
 ```bash
 cd acceptancetest
